@@ -1,0 +1,14 @@
+.userCard{
+    background-color: beige;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .userInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }

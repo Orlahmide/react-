@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(25, 233, 216);
+  padding: 30px 30px;
+  border-radius: 20px;
+}
+
+.formContainer{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input{
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.btn{
+  padding: 5px;
+  border-radius: 12px;
+  background-color: burlywood;
+  color: black;
+  transition: all ease-in-out;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn:hover{
+  background-color: brown;
+  color: white;
+}
+
+.formClass{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.userCard{
+  background-color: beige;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
