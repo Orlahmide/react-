@@ -8,6 +8,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Blog from './pages/Blog';
+import Users from './pages/Users';
+import SingleUser from './pages/SingleUser';
 
 
 
@@ -16,10 +18,12 @@ root.render(
   <React.StrictMode>
      <Router>
       <Routes>
-        <Route path = "/home" element={<Home/>}></Route>
+        <Route path = "/" element={<Home/>}></Route>
         <Route path = "/about" element={<About/>}></Route>
         <Route path = "/contact" element= {<Contact/>}></Route>
+        <Route path = "/users" element= {<Users/>}></Route>
         <Route path = "/blog" element= {<Blog/>}></Route>
+        <Route path = "/users/:id" element= {<SingleUser/>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>

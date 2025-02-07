@@ -6,9 +6,11 @@ function NavBar() {
     <div>
         <nav>
             <ul>
-                <ol><Link to="/home">Home</Link></ol>
+                <ol><Link to="/">Home</Link></ol>
                 <ol><Link to="/about">About</Link></ol>
                 <ol><Link to="/contact">Contact</Link></ol>
+                <ol><Link to="/users">Users</Link></ol>
+                <ol><Link to="/blog">Blog</Link></ol>
             </ul>
         </nav>
     </div>
