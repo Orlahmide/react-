@@ -1,39 +1,41 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import NavBar from "../Component/NavBar";
+import UserDetails from "../Component/atoms/UserDetails"; 
+import axios from "axios";
+
+
 
 function SingleUser() {
-  const { name } = useParams(); 
+  const {login} = useParams();
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+
+  const getUser = async () => {
+    setLoading(true);
+    try{
+      const response = await axios.get(`https://api.github.com/users/${login}`,{
+        headers: {
+          Authorization: process.env.GITHUB_TOKEN
+        }
+      }
+       
+    );
+      setUser(response.data);
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const getSingleUser = async () => {
-      try {
-        const response = await axios.get(`https://randomuser.me/api/?${name}`);
-        setUser(response.data.results[0]); 
-      } catch (error) {
-        console.error("Error fetching user:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getSingleUser();
-  }, []); 
-
-  if (loading) return <p>Loading...</p>;
-  if (!user) return <p>User not found</p>;
-
-  return (
-    <div className="hello">
-      <NavBar />
-      <div>
-        <p>{user.name.first} {user.name.last}</p>
-        <img src={user.picture.large} alt="User" />
-      </div>
-    </div>
-  );
+    if (login){
+      getUser(login)
+    }
+  }, [login])
 }
 
 export default SingleUser;
+
